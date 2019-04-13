@@ -1,7 +1,10 @@
 const PORT = 55000;
-
+const app = require('express')();
+const cors = require('cors');
 var server = require('http').createServer();
 var io = require('socket.io')(server);
+app.use(cors()); // <---- use cors middleware
+
 let roomno = 0;
 let playerToMarry = null;
 let game = [];
